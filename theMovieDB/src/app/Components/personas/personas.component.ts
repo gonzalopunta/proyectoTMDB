@@ -10,7 +10,7 @@ import { PersonaService } from 'src/app/Services/persona.service';
 export class PersonasComponent implements OnInit {
 
   actores: Persona[];
-  displayedColumns = ['name'];
+  displayedColumns = ['name', 'popularity', 'adult'];
 
   constructor(private personaService : PersonaService) { }
 

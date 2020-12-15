@@ -7,19 +7,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailActorComponent } from './Components/detail-actor/detail-actor.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PersonaService } from './Services/persona.service';
+
+
+const ROUTES: Routes = [
+  {path: 'actores', component: PersonasComponent},
+  {path: 'detalle/:idActor', component: DetailActorComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonasComponent
+    PersonasComponent,
+    DetailActorComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      ROUTES
+    )
   ],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

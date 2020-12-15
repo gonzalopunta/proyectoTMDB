@@ -2,7 +2,17 @@
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Nombre actor </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> <a [routerLink]="['/detalle', element.id.toString() ]">{{element.name}}</a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="popularity">
+      <th mat-header-cell *matHeaderCellDef> Popularidad actor </th>
+      <td mat-cell *matCellDef="let element"> {{element.popularity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="adult">
+      <th mat-header-cell *matHeaderCellDef> Tiene peliculas para adultos </th>
+      <td mat-cell *matCellDef="let element"> {{element.adult}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
